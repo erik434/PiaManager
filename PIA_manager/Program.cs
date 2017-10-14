@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace PIA
 {
-    //Original author Shukhrat Nekbaev
+    //Original author Shukhrat Nekbaev: https://www.privateinternetaccess.com/forum/discussion/2286/pia-from-a-fixed-location-in-windows
     class PIA_Runner
     {
         static void Main(string[] args)
