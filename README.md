@@ -3,7 +3,7 @@ Every time the PIA VPN starts, it deploys some Ruby files to a random temp direc
 
 # First-time Setup
 1. Start PIA as usual so it can deploy its files to a random temp directory.
-2. Find this directory. It seems to match the pattern `%USERPROFILE%\AppData\Local\Temp\ocr\*.tmp` and should contain `bin`, `lib`, and `src` folders.
+2. Find this directory. It seems to match the pattern `%USERPROFILE%\AppData\Local\Temp\ocr*.tmp` and should contain `bin`, `lib`, and `src` folders.
 3. Copy the contents of this directory into a new directory called `pia_ruby_files` inside your PIA install folder (probably `%PROGRAMFILES%\pia_manager` unless you changed it). So when you're done you should have `pia_manager\pia_ruby_files\src` etc.
 4. Rename the existing `pia_manager.exe` inside your PIA install folder to something like `pia_manager.exe.backup`.
 5. Build this project and copy the output `pia_manager.exe` into your PIA install folder. That should be it!
