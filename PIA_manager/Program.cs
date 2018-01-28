@@ -107,10 +107,22 @@ namespace PIA_manager
             Console.WriteLine($"Ruby files directory: {rubyFilesDir}");
 
             rubyExecutable = Path.Combine(rubyFilesDir, "bin", "rubyw.exe");
-            rubySourceFile = Path.Combine(rubyFilesDir, "src", "pia_manager.rb");
-
             if (!File.Exists(rubyExecutable)) throw new FileNotFoundException("Could not find ruby executable", rubyExecutable);
-            if (!File.Exists(rubySourceFile)) throw new FileNotFoundException("Could not find pia_manager ruby file", rubySourceFile);
+
+            var rubySourceFileOld = Path.Combine(rubyFilesDir, "src", "pia_manager.rb");
+            var rubySourceFileNew = Path.Combine(rubyFilesDir, "src", "bin", "pia_manager.rb");
+            if (File.Exists(rubySourceFileOld))
+            {
+                rubySourceFile = rubySourceFileOld;
+            }
+            else if (File.Exists(rubySourceFileNew))
+            {
+                rubySourceFile = rubySourceFileNew;
+            }
+            else
+            {
+                throw new FileNotFoundException("Could not find pia_manager ruby file", rubySourceFile);
+            }
         }
 
         static bool DirContainsPiaFiles(string searchDir)
