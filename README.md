@@ -1,3 +1,5 @@
+## Note: this program is no longer necessary with the modern PIA app, but I'm leaving this project up in case it's still useful to someone.
+
 # Purpose
 Every time the PIA VPN starts, it deploys some Ruby files to a random temp directory and then launches those. The random path prevents it from being whitelisted by firewalls. This program helps to run PIA from a fixed location so it can be whitelisted in firewalls.
 
